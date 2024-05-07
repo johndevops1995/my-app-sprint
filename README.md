@@ -21,7 +21,7 @@ After starting the application it is accessible under `localhost:8080`.
 The application can be built using the following command:
 
 ```
-mvnw clean package
+./mvnw clean install
 ```
 
 Start your application with the following command - here with the profile `production`:
