@@ -41,26 +41,26 @@ jobs:
       - name: build jar
         run: mvn clean install
 
-      - name: 'Login via Azure CLI'
-        uses: azure/login@v2
-        with:
-          creds: ${{ secrets.AZURE_CREDENTIALS }}
+#      - name: 'Login via Azure CLI'
+#        uses: azure/login@v2
+#        with:
+#          creds: ${{ secrets.AZURE_CREDENTIALS }}
 
-      - uses: azure/docker-login@v2
-        with:
-          login-server: ${{ secrets.REGISTRY_URL }}
-          username: ${{ secrets.REGISTRY_USERNAME }}
-          password: ${{ secrets.REGISTRY_PASSWORD }}
+#      - uses: azure/docker-login@v2
+#        with:
+#          login-server: ${{ secrets.REGISTRY_URL }}
+#          username: ${{ secrets.REGISTRY_USERNAME }}
+#          password: ${{ secrets.REGISTRY_PASSWORD }}
 
-      - run: |
-          docker build -t ${{ secrets.REGISTRY_URL }}/${{ secrets.REGISTRY_IMAGE }}:${{ github.sha }} .
-          docker push ${{ secrets.REGISTRY_URL }}/${{ secrets.REGISTRY_IMAGE }}:${{ github.sha }}
+#      - run: |
+#          docker build -t ${{ secrets.REGISTRY_URL }}/${{ secrets.REGISTRY_IMAGE }}:${{ github.sha }} .
+#          docker push ${{ secrets.REGISTRY_URL }}/${{ secrets.REGISTRY_IMAGE }}:${{ github.sha }}
 
-      - uses: azure/webapps-deploy@v3
-        with:
-          app-name: ${{ secrets.APP_SERVICE_NAME }}
-          images: '${{ secrets.REGISTRY_URL }}/${{ secrets.REGISTRY_IMAGE }}:${{ github.sha }}'
+#      - uses: azure/webapps-deploy@v3
+#        with:
+#          app-name: ${{ secrets.APP_SERVICE_NAME }}
+#          images: '${{ secrets.REGISTRY_URL }}/${{ secrets.REGISTRY_IMAGE }}:${{ github.sha }}'
 
-      - name: Azure logout
-        run: |
-          az logout
+#      - name: Azure logout
+#        run: |
+#          az logout
