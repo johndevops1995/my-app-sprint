@@ -1,14 +1,16 @@
+# Usa una imagen base ligera de OpenJDK 21
 FROM openjdk:21-slim
 
-#ARG PROFILE
-#ARG SENTRY_DSN_ARG
-#ARG SENTRY_ENVIRONMENT_ARG
-
-#ENV PROFILE_ENV=$PROFILE
-#ENV SENTRY_ENVIRONMENT=$SENTRY_ENVIRONMENT_ARG
-#ENV SENTRY_DSN=$SENTRY_DSN_ARG
-
-COPY ./target/my-app-de-john-0.0.1-SNAPSHOT.jar /usr/src/app/
+# Directorio de trabajo dentro del contenedor
 WORKDIR /usr/src/app
 
+# Copia el archivo .jar compilado al contenedor
+COPY ./target/my-app-de-john-0.0.1-SNAPSHOT.jar .
+
+# Variables de entorno configurables (Railway las define en su entorno)
+ENV PROFILE_ENV=${PROFILE}
+ENV SENTRY_ENVIRONMENT=${SENTRY_ENVIRONMENT}
+ENV SENTRY_DSN=${SENTRY_DSN}
+
+# Comando por defecto para ejecutar la app
 CMD ["java", "-jar", "my-app-de-john-0.0.1-SNAPSHOT.jar"]
