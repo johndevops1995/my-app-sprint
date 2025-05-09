@@ -1,0 +1,17 @@
+io/bootify/my_app_de_john/rest/ReservationResource.class
+io/bootify/my_app_de_john/util/ReferencedWarning.class
+io/bootify/my_app_de_john/controller/HomeController.class
+io/bootify/my_app_de_john/util/ReferencedException.class
+io/bootify/my_app_de_john/config/DomainConfig.class
+io/bootify/my_app_de_john/config/SwaggerConfig.class
+io/bootify/my_app_de_john/domain/Reservation.class
+io/bootify/my_app_de_john/config/JacksonConfig.class
+io/bootify/my_app_de_john/domain/User.class
+io/bootify/my_app_de_john/domain/Amenity.class
+io/bootify/my_app_de_john/service/ReservationService.class
+io/bootify/my_app_de_john/repos/UserRepository.class
+io/bootify/my_app_de_john/util/NotFoundException.class
+io/bootify/my_app_de_john/model/ReservationDTO.class
+io/bootify/my_app_de_john/MyAppDeJohnApplication.class
+io/bootify/my_app_de_john/repos/AmenityRepository.class
+io/bootify/my_app_de_john/repos/ReservationRepository.class
